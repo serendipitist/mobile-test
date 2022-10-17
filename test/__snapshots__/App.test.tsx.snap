@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTScrollView
+  stickyHeaderIndices={
+    Array [
+      4,
+    ]
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "bold",
+          "letterSpacing": 0.44,
+          "marginBottom": 0,
+          "paddingLeft": 24,
+          "paddingTop": 50,
+        }
+      }
+    >
+      Magazine Issues
+    </Text>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": 12,
+        }
+      }
+    >
+      <Text>
+        Magazine
+      </Text>
+      <Text>
+        Gardening
+      </Text>
+      <Text>
+        Travel
+      </Text>
+      <Text>
+        Computing
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "marginBottom": 12,
+        }
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        value={true}
+      />
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        value={true}
+      />
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        value={true}
+      />
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        value={true}
+      />
+    </View>
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "0": Object {
+              "cover": "Which? Magazine",
+              "issue": "September 2022",
+              "uri": "https://via.placeholder.com/160x220.png",
+            },
+            "id": 1,
+          },
+          Object {
+            "0": Object {
+              "cover": "Which? Magazine",
+              "issue": "August 2022",
+              "uri": "https://via.placeholder.com/160x220.png",
+            },
+            "id": 5,
+          },
+          Object {
+            "0": Object {
+              "cover": "Which? Magazine",
+              "issue": "July 2022",
+              "uri": "https://via.placeholder.com/160x220.png",
+            },
+            "id": 9,
+          },
+          Object {
+            "0": Object {
+              "cover": "Which? Magazine",
+              "issue": "June 2022",
+              "uri": "https://via.placeholder.com/160x220.png",
+            },
+            "id": 13,
+          },
+        ]
+      }
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      viewabilityConfigCallbackPairs={Array []}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "background": "#fff",
+                "borderColor": "black",
+                "borderRadius": 10,
+                "boxShadow": "0px 15px 88px -37px rgba(0,0,0,0.17)",
+                "height": 350,
+                "margin": 10,
+                "overflow": "hidden",
+                "textAlign": "center",
+                "width": "auto",
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://via.placeholder.com/160x220.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 260,
+                  "overflow": "hidden",
+                  "width": "auto",
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginTop": 12,
+                }
+              }
+            >
+              September 2022
+            </Text>
+            <Text
+              style={
+                Object {
+                  "fontSize": 21,
+                  "lineHeight": 28,
+                }
+              }
+            >
+              Which? Magazine
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "background": "#fff",
+                "borderColor": "black",
+                "borderRadius": 10,
+                "boxShadow": "0px 15px 88px -37px rgba(0,0,0,0.17)",
+                "height": 350,
+                "margin": 10,
+                "overflow": "hidden",
+                "textAlign": "center",
+                "width": "auto",
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://via.placeholder.com/160x220.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 260,
+                  "overflow": "hidden",
+                  "width": "auto",
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginTop": 12,
+                }
+              }
+            >
+              August 2022
+            </Text>
+            <Text
+              style={
+                Object {
+                  "fontSize": 21,
+                  "lineHeight": 28,
+                }
+              }
+            >
+              Which? Magazine
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "background": "#fff",
+                "borderColor": "black",
+                "borderRadius": 10,
+                "boxShadow": "0px 15px 88px -37px rgba(0,0,0,0.17)",
+                "height": 350,
+                "margin": 10,
+                "overflow": "hidden",
+                "textAlign": "center",
+                "width": "auto",
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://via.placeholder.com/160x220.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 260,
+                  "overflow": "hidden",
+                  "width": "auto",
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginTop": 12,
+                }
+              }
+            >
+              July 2022
+            </Text>
+            <Text
+              style={
+                Object {
+                  "fontSize": 21,
+                  "lineHeight": 28,
+                }
+              }
+            >
+              Which? Magazine
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Object {
+                "background": "#fff",
+                "borderColor": "black",
+                "borderRadius": 10,
+                "boxShadow": "0px 15px 88px -37px rgba(0,0,0,0.17)",
+                "height": 350,
+                "margin": 10,
+                "overflow": "hidden",
+                "textAlign": "center",
+                "width": "auto",
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://via.placeholder.com/160x220.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 260,
+                  "overflow": "hidden",
+                  "width": "auto",
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginTop": 12,
+                }
+              }
+            >
+              June 2022
+            </Text>
+            <Text
+              style={
+                Object {
+                  "fontSize": 21,
+                  "lineHeight": 28,
+                }
+              }
+            >
+              Which? Magazine
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff5d4",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 100,
+          "justifyContent": "center",
+          "padding": 10,
+          "textAlign": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text>
+        The full archive is available to Which? members
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;
