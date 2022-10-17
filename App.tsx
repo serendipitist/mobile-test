@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, useWindowDimensions, Image, StyleSheet, Switch, ScrollView } from 'react-native';
+import { View, Text, FlatList, useWindowDimensions, Image, StyleSheet, Switch, ScrollView, Platform } from 'react-native';
 
 let listingData = require('./data.json');
+
+console.log(Platform.OS, 'platform');
 
 const styles = StyleSheet.create({
     screenTitle: {

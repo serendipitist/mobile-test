@@ -3,7 +3,7 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     preset: 'react-native',
     testEnvironment: 'jsdom',
-    testMatch: ['<rootDir>/**/*.test.{js,jsx,ts,tsx}'],
+    testMatch: ['**/test/**', '!**/src/**'],
     testPathIgnorePatterns: ['<rootDir>/node_modules/'],
     transform: {
         '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
