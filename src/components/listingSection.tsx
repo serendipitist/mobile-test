@@ -93,31 +93,29 @@ const ListingSection = (props) => {
 
     return (
         <SafeAreaView style={isPortrait ? styles.container : styles.landscapeContainer}>
-            <ScrollView>
-                {listingData.length !== 0 ? (
-                    <FlatList
-                        horizontal={isPortrait ? false : true}
-                        data={listingData}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => {
-                            return (
-                                <View style={styles.cardItem}>
-                                    <Image
-                                        style={styles.coverImage}
-                                        source={{
-                                            uri: item[0].uri,
-                                        }}
-                                    />
-                                    <Text style={styles.coverTitle}>{item[0].cover}</Text>
-                                    <Text style={styles.coverIssue}>{item[0].issue}</Text>
-                                </View>
-                            );
-                        }}
-                    />
-                ) : (
-                    <Text style={styles.noData}>{noData}</Text>
-                )}
-            </ScrollView>
+            {listingData.length !== 0 ? (
+                <FlatList
+                    horizontal={isPortrait ? false : true}
+                    data={listingData}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => {
+                        return (
+                            <View style={styles.cardItem}>
+                                <Image
+                                    style={styles.coverImage}
+                                    source={{
+                                        uri: item[0].uri,
+                                    }}
+                                />
+                                <Text style={styles.coverTitle}>{item[0].cover}</Text>
+                                <Text style={styles.coverIssue}>{item[0].issue}</Text>
+                            </View>
+                        );
+                    }}
+                />
+            ) : (
+                <Text style={styles.noData}>{noData}</Text>
+            )}
         </SafeAreaView>
     );
 };
