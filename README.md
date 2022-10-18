@@ -8,6 +8,9 @@ Building on iOS requires a macOS development environment.
 
 This Application runs both on ios and android devices.
 
+## npm run start 
+metro bundler starts
+
 ios
 
 ## npm run ios
