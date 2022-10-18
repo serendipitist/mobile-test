@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     landscapeContainer: {
         display: 'flex',
         flexWrap: 'wrap',
-				alignContent: 'flex-start',
-				flexBasis: '50%',
+        alignContent: 'flex-start',
+        flexBasis: '50%',
     },
 
     coverImage: {

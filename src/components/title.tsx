@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.44,
         marginBottom: 0,
         paddingTop: 50,
-				marginLeft: 12,
+        marginLeft: 12,
     },
 });
 

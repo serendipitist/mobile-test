@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     footnote: {
         display: 'flex',
-				flex: 1,
+        flex: 1,
         flexDirection: 'row',
         backgroundColor: '#fff5d4',
         alignItems: 'center',
@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
 });
 
 const FootNote = () => (
-	<View style={styles.footnote}>
-		<Text>The full archive is available to Which? members</Text>
-	</View>
+    <View style={styles.footnote}>
+        <Text>The full archive is available to Which? members</Text>
+    </View>
 );
 
 export default FootNote;
