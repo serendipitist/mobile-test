@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import type { PlatformIOSStatic } from 'react-native';
-import { View, Text, FlatList, useWindowDimensions, Image, StyleSheet, Switch, ScrollView } from 'react-native';
+import React, { useState} from 'react';
+import { View, Text, StyleSheet, Switch, ScrollView } from 'react-native';
 import FootNote from './src/components/footNote';
 import ListingSection from './src/components/listingSection';
 import ScreenTitle from './src/components/title';
@@ -8,20 +7,6 @@ import ScreenTitle from './src/components/title';
 let listingData = require('./data.json');
 
 const styles = StyleSheet.create({
-    portrait: {
-        textAlign: 'center',
-        paddingTop: 10,
-        borderRadius: 4,
-    },
-
-    landscape: {
-        display: 'flex',
-    },
-
-    itemLandscape: {
-        width: '50%', // is 50% of container width
-    },
-
     toggleLabel: {
         display: 'flex',
         flexDirection: 'row',
@@ -54,21 +39,46 @@ const App = () => {
     const toggleSwitchComputing = () => setIsComputingEnabled((previousState) => !previousState);
     const toggleSwitchGardening = () => setIsGardeningEnabled((previousState) => !previousState);
 
+    const combined = (a, b, c) => {
+        return [...a, ...b, ...c];
+    };
     // eslint-disable-next-line complexity
     const getListingData = () => {
+        let combinedData;
         const magazineData = listingData.filter((val) => val[0].cover.includes('Magazine'));
         const gardeningData = listingData.filter((val) => val[0].cover.includes('Gardening'));
-				const travelData = listingData.filter((val) => val[0].cover.includes('travel'));
-				const computingData = listingData.filter((val) => val[0].cover.includes('computing'));
-        const combined = (a, b, c) => {
-            return [...a, ...b, ...c];
-        };
+        const travelData = listingData.filter((val) => val[0].cover.includes('Travel'));
+        const computingData = listingData.filter((val) => val[0].cover.includes('Computing'));
+
         if (isMagazineEnabled && isComputingEnabled && isTravelEnabled && isGardeningEnabled) return listingData;
-        else if (isMagazineEnabled) return listingData.filter((val) => val[0].cover.includes('Magazine'));
+        else if (isComputingEnabled && isGardeningEnabled && isMagazineEnabled) {
+            combinedData = combined(computingData, gardeningData, magazineData);
+            return [...combinedData];
+        } else if (isComputingEnabled && isTravelEnabled && isMagazineEnabled) {
+            combinedData = combined(computingData, travelData, magazineData);
+            return [...combinedData];
+        } else if (isComputingEnabled && isTravelEnabled && isMagazineEnabled) {
+            combinedData = combined(computingData, travelData, magazineData);
+            return [...combinedData];
+        } else if (isGardeningEnabled && isTravelEnabled && isMagazineEnabled) {
+            combinedData = combined(gardeningData, travelData, magazineData);
+            return [...combinedData];
+        } else if (isComputingEnabled && isGardeningEnabled) {
+            combinedData = combined(computingData, gardeningData, []);
+            return [...combinedData];
+        } else if (isMagazineEnabled && isGardeningEnabled) {
+            combinedData = combined(magazineData, gardeningData, []);
+            return [...combinedData];
+        } else if (isTravelEnabled && isComputingEnabled) {
+            combinedData = combined(travelData, computingData, []);
+            return [...combinedData];
+        } else if (isTravelEnabled && isComputingEnabled) {
+            combinedData = combined(travelData, computingData, []);
+            return [...combinedData];
+        } else if (isMagazineEnabled) return listingData.filter((val) => val[0].cover.includes('Magazine'));
         else if (isComputingEnabled) return listingData.filter((val) => val[0].cover.includes('Computing'));
         else if (isGardeningEnabled) return listingData.filter((val) => val[0].cover.includes('Gardening'));
         else if (isTravelEnabled) return listingData.filter((val) => val[0].cover.includes('Travel'));
-				else if (isComputingEnabled && isGardeningEnabled) return listingData = combined(computingData, gardeningData, []);
         else if (!isMagazineEnabled && !isComputingEnabled && !isTravelEnabled && !isGardeningEnabled) {
             return [];
         }
