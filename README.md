@@ -24,11 +24,11 @@ snapshot is configured
 
 Android 
 
-<img width="370" alt="image" src="https://user-images.githubusercontent.com/12758622/196399263-ba65de94-4212-411d-ae81-72e1c33aa1aa.png">
+<img width="325" alt="image" src="https://user-images.githubusercontent.com/12758622/196403183-5de94ef6-f9eb-4a07-923d-95cf8fb7b9ca.png">
 
 Ios
 
-<img width="358" alt="image" src="https://user-images.githubusercontent.com/12758622/196399343-4ce855b0-0955-428f-a8c8-cba8070d524b.png">
+<img width="368" alt="image" src="https://user-images.githubusercontent.com/12758622/196403228-91eda762-9e41-4388-ae01-79948394002c.png">
 
 
 Toggle filter is added which has functionality to filter data as per topics.
