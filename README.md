@@ -19,7 +19,7 @@ android
 
 Testing 
 
-npm run test
+## npm run test
 snapshot is configured
 
 Android 
