@@ -34,11 +34,14 @@ const styles = StyleSheet.create({
     },
     coverIssue: {
         fontSize: 14,
+        display: 'flex',
+        textAlign: 'center',
     },
     coverTitle: {
         fontSize: 21,
         lineHeight: 28,
         marginTop: 12,
+        textAlign: 'center',
     },
 
     cardItem: {
