@@ -85,8 +85,8 @@ const App = () => {
     };
 
     return (
-        <View style={{ flex: 1 }}>
-            <ScrollView nestedScrollEnabled={true} style={{ flexGrow: 1 }}>
+        <View>
+            <ScrollView nestedScrollEnabled={true}>
                 <ScreenTitle />
                 <View style={styles.toggleLabel}>
                     <Text>Magazine</Text>

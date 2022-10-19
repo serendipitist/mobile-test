@@ -1,15 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-    View,
-    Text,
-    StyleSheet,
-    FlatList,
-    Image,
-    SafeAreaView,
-    ScrollView,
-    LogBox,
-    useWindowDimensions,
-} from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, SafeAreaView, LogBox, useWindowDimensions } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
