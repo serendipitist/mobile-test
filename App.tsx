@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     toggleLabel: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
         padding: 12,
     },
 
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         flex: 1,
-        alignItems: 'stretch',
         justifyContent: 'space-evenly',
         marginBottom: 32,
         paddingBottom: 12,
