@@ -12,9 +12,8 @@ const styles = StyleSheet.create({
 
     landscapeContainer: {
         display: 'flex',
-        flexWrap: 'wrap',
-        alignContent: 'flex-start',
-        flexBasis: '50%',
+        flexDirection: 'column',
+        overflow: 'scroll',
     },
 
     coverImage: {
@@ -51,13 +50,12 @@ const styles = StyleSheet.create({
         background: '#fff',
         borderColor: 'black',
         height: 350,
-        width: '50%',
         borderRadius: 10,
         textAlign: 'center',
         boxShadow: '0px 15px 88px -37px rgba(0,0,0,0.17)',
-        overflow: 'hidden',
         margin: 10,
         paddingTop: 24,
+        flexWrap: 'wrap',
     },
 
     noData: {
@@ -90,7 +88,7 @@ const ListingSection = (props) => {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => {
                         return (
-                            <View style={styles.cardItem}>
+                            <View style={isPortrait ? styles.cardItem : styles.landscapeCardItem}>
                                 <Image
                                     style={styles.coverImage}
                                     source={{
