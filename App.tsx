@@ -1,10 +1,13 @@
-import React, { useState} from 'react';
+/* eslint-disable fp/no-let */
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Switch, ScrollView } from 'react-native';
 import FootNote from './src/components/footNote';
 import ListingSection from './src/components/listingSection';
 import ScreenTitle from './src/components/title';
+import { getCombinedData } from './src/utils/helpers';
 
-let listingData = require('./data.json');
+const data = require('./data.json');
+let listingData = data;
 
 const styles = StyleSheet.create({
     toggleLabel: {
@@ -39,9 +42,6 @@ const App = () => {
     const toggleSwitchComputing = () => setIsComputingEnabled((previousState) => !previousState);
     const toggleSwitchGardening = () => setIsGardeningEnabled((previousState) => !previousState);
 
-    const combined = (a, b, c) => {
-        return [...a, ...b, ...c];
-    };
     // eslint-disable-next-line complexity
     const getListingData = () => {
         let combinedData;
@@ -52,28 +52,28 @@ const App = () => {
 
         if (isMagazineEnabled && isComputingEnabled && isTravelEnabled && isGardeningEnabled) return listingData;
         else if (isComputingEnabled && isGardeningEnabled && isMagazineEnabled) {
-            combinedData = combined(computingData, gardeningData, magazineData);
+            combinedData = getCombinedData(computingData, gardeningData, magazineData);
             return [...combinedData];
         } else if (isComputingEnabled && isTravelEnabled && isMagazineEnabled) {
-            combinedData = combined(computingData, travelData, magazineData);
+            combinedData = getCombinedData(computingData, travelData, magazineData);
             return [...combinedData];
         } else if (isComputingEnabled && isTravelEnabled && isMagazineEnabled) {
-            combinedData = combined(computingData, travelData, magazineData);
+            combinedData = getCombinedData(computingData, travelData, magazineData);
             return [...combinedData];
         } else if (isGardeningEnabled && isTravelEnabled && isMagazineEnabled) {
-            combinedData = combined(gardeningData, travelData, magazineData);
+            combinedData = getCombinedData(gardeningData, travelData, magazineData);
             return [...combinedData];
         } else if (isComputingEnabled && isGardeningEnabled) {
-            combinedData = combined(computingData, gardeningData, []);
+            combinedData = getCombinedData(computingData, gardeningData, []);
             return [...combinedData];
         } else if (isMagazineEnabled && isGardeningEnabled) {
-            combinedData = combined(magazineData, gardeningData, []);
+            combinedData = getCombinedData(magazineData, gardeningData, []);
             return [...combinedData];
         } else if (isTravelEnabled && isComputingEnabled) {
-            combinedData = combined(travelData, computingData, []);
+            combinedData = getCombinedData(travelData, computingData, []);
             return [...combinedData];
         } else if (isTravelEnabled && isComputingEnabled) {
-            combinedData = combined(travelData, computingData, []);
+            combinedData = getCombinedData(travelData, computingData, []);
             return [...combinedData];
         } else if (isMagazineEnabled) return listingData.filter((val) => val[0].cover.includes('Magazine'));
         else if (isComputingEnabled) return listingData.filter((val) => val[0].cover.includes('Computing'));
@@ -85,23 +85,25 @@ const App = () => {
     };
 
     return (
-        <ScrollView>
-            <ScreenTitle />
-            <View style={styles.toggleLabel}>
-                <Text>Magazine</Text>
-                <Text>Gardening</Text>
-                <Text>Travel</Text>
-                <Text>Computing</Text>
-            </View>
-            <View style={styles.toggleSwitch}>
-                <Switch value={isMagazineEnabled} onValueChange={toggleSwitchMagazine} />
-                <Switch value={isGardeningEnabled} onValueChange={toggleSwitchGardening} />
-                <Switch value={isTravelEnabled} onValueChange={toggleSwitchTravel} />
-                <Switch value={isComputingEnabled} onValueChange={toggleSwitchComputing} />
-            </View>
-            <ListingSection listingData={getListingData()} />
-            <FootNote />
-        </ScrollView>
+        <View style={{ flex: 1 }}>
+            <ScrollView nestedScrollEnabled={true} style={{ flexGrow: 1 }} overScrollMode>
+                <ScreenTitle />
+                <View style={styles.toggleLabel}>
+                    <Text>Magazine</Text>
+                    <Text>Gardening</Text>
+                    <Text>Travel</Text>
+                    <Text>Computing</Text>
+                </View>
+                <View style={styles.toggleSwitch}>
+                    <Switch value={isMagazineEnabled} onValueChange={toggleSwitchMagazine} />
+                    <Switch value={isGardeningEnabled} onValueChange={toggleSwitchGardening} />
+                    <Switch value={isTravelEnabled} onValueChange={toggleSwitchTravel} />
+                    <Switch value={isComputingEnabled} onValueChange={toggleSwitchComputing} />
+                </View>
+                <ListingSection listingData={getListingData()} />
+                <FootNote />
+            </ScrollView>
+        </View>
     );
 };
 
