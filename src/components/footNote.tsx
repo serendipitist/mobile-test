@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 
 const FootNote = () => (
     <View style={styles.footnote}>
-        <Text>The full archive is available to Which? members</Text>
+        <Text>End of the list!!</Text>
     </View>
 );
 

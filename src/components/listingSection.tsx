@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Image, SafeAreaView, LogBox, useWindowDimensions } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, SafeAreaView, LogBox, useWindowDimensions, ScrollView } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -75,14 +75,11 @@ const ListingSection = (props) => {
     const { width, height } = useWindowDimensions();
     const isPortrait = height > width;
 
-    useEffect(() => {
-        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
-    }, []);
-
     return (
-        <SafeAreaView style={isPortrait ? styles.container : styles.landscapeContainer}>
+        <ScrollView nestedScrollEnabled={true}>
             {listingData.length !== 0 ? (
                 <FlatList
+                    nestedScrollEnabled={true}
                     horizontal={isPortrait ? false : true}
                     data={listingData}
                     keyExtractor={(item) => item.id.toString()}
@@ -104,7 +101,7 @@ const ListingSection = (props) => {
             ) : (
                 <Text style={styles.noData}>{noData}</Text>
             )}
-        </SafeAreaView>
+        </ScrollView>
     );
 };
 
